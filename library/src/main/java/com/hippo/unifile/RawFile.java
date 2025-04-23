@@ -86,6 +86,11 @@ class RawFile extends UniFile {
     }
 
     @Override
+    public Boolean mkdir() {
+      return super.mkdir() || mFile.mkdir();
+    }
+
+    @Override
     @NonNull
     public Uri getUri() {
         return Uri.fromFile(mFile);

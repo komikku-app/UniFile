@@ -238,6 +238,16 @@ public abstract class UniFile {
     public abstract UniFile createDirectory(String displayName);
 
     /**
+     * Create this directory if it does not exist.
+     * 
+     * @return {@code true} if this directory was existed or created successfully,
+     *  {@code false} otherwise.
+     */
+    public Boolean mkdir() {
+      return exists() && isDirectory();
+    }
+
+    /**
      * Return a Uri for the underlying document represented by this file. This
      * can be used with other platform APIs to manipulate or share the
      * underlying content. You can use {@link #isTreeDocumentUri(Context, Uri)} to
